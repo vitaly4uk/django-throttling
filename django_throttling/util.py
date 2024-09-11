@@ -79,7 +79,7 @@ class Throttle(object):
         if timeout is False:  # view is disabled
             return HttpResponseBadRequest()
 
-        if (timeout is None) or (timeout is 0):
+        if not timeout:
             return
 
         if isinstance(timeout, str):
